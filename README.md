@@ -8,6 +8,8 @@ quanto netto in più può arrivare in busta al dipendente?**
 
 > È una stima: non sostituisce la busta paga reale.
 
+![Schermata principale: RAL, profilo familiare e busta di oggi](docs/home.png)
+
 ## Cosa calcola
 
 1. **La busta di oggi**: dalla RAL e dal profilo familiare calcola netto annuo,
@@ -22,6 +24,61 @@ quanto netto in più può arrivare in busta al dipendente?**
 Esempio, RAL 35.000 e budget 2.000 euro con un figlio a carico: l'aumento in RAL
 lascia circa 600 euro netti, il fringe benefit ne lascia 2.000. Per dare lo stesso
 netto con un aumento servirebbero circa 7.117 euro di costo azienda.
+
+![Confronto a parità di costo: aumento in RAL contro pacchetto](docs/confronto.png)
+
+## Come funziona
+
+### Dalla RAL al netto
+
+```mermaid
+flowchart TD
+    RAL["RAL"] --> INPS["Contributi INPS dipendente 9,19%"]
+    RAL --> IMP["Imponibile fiscale = RAL - INPS"]
+    INPS --> IMP
+    IMP --> LORDA["IRPEF lorda a scaglioni 23% / 33% / 43%"]
+    IMP --> DET["Detrazioni: lavoro dipendente, coniuge, figli 21-29 anni"]
+    IMP --> CUNEO{"Taglio del cuneo"}
+    CUNEO -->|"reddito fino a 20.000"| ESENTE["Somma esente"]
+    CUNEO -->|"oltre 20.000"| ULT["Ulteriore detrazione"]
+    LORDA --> NETTA["IRPEF netta, mai negativa"]
+    DET --> NETTA
+    ULT --> NETTA
+    NETTA --> ADD{"IRPEF netta maggiore di zero?"}
+    ADD -->|"sì"| ADDIZ["Addizionali regionale e comunale"]
+    ADD -->|"no"| ZERO["Addizionali azzerate"]
+    IMP --> TI["Trattamento integrativo"]
+    ADDIZ --> NETTO["Netto annuo e mensile"]
+    ZERO --> NETTO
+    ESENTE --> NETTO
+    TI --> NETTO
+    RAL --> COSTO["Costo azienda = RAL + INPS datore + INAIL + TFR"]
+```
+
+### Confronto a parità di costo
+
+```mermaid
+flowchart TD
+    B["Budget in più, in costo azienda"] --> A["Scenario A: tutto in aumento di RAL"]
+    B --> P["Scenario B: pacchetto"]
+    P --> F["1. Fringe benefit fino alla soglia (1.000 o 2.000 euro)"]
+    F --> BP["2. Buoni pasto fino a 10 euro al giorno"]
+    BP --> W["3. Welfare aziendale"]
+    W --> PR["4. Premio di risultato, imposta 1%"]
+    PR --> R["Resto in RAL"]
+    R --> MIG["Si provano tutte le combinazioni di leve attive e si tiene il netto più alto"]
+    A --> CONF["Netto in più: A contro B"]
+    MIG --> CONF
+    CONF --> EQ["Costo di un aumento che darebbe lo stesso netto del pacchetto"]
+    EQ --> RISP["Risparmio per l'azienda"]
+```
+
+Il pacchetto non rende mai meno dell'aumento in RAL: tra le combinazioni provate
+c'è anche quella senza leve, che coincide con lo scenario A.
+
+<p align="center">
+  <img src="docs/mobile.png" alt="La busta di oggi su smartphone" width="320">
+</p>
 
 ## Funzioni
 
