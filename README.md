@@ -106,6 +106,8 @@ Gerarchia: prima Normattiva, poi Agenzia delle Entrate, INPS, Dipartimento delle
 
 ## Come l'ho sviluppato
 
+Requisiti, regole fiscali, casi di prova e criteri di accettazione li ho scritti io. Il codice è scritto con [Claude Code](https://claude.com/claude-code), un passo alla volta:
+
 1. **Prima le regole, poi l'interfaccia**: ogni formula scritta con la sua fonte, ogni costante in `lib/parametri-2026.json`.
 2. **Test su casi calcolati a mano** (RAL 25.000, 30.000 e 50.000, voce per voce), sui bordi degli scaglioni e degli scalini, e sul confronto contro una ricerca a forza bruta.
 3. **Confronto con due calcolatori pubblici**: con il primo lo scarto è di pochi centesimi, dovuto al troncamento dei rapporti delle detrazioni; con il secondo le differenze (0,1-1%) si spiegano con l'aliquota 2025 e con addizionali forfettarie.
@@ -120,7 +122,7 @@ Autore: Marco Parolin.
 | Interfaccia | Tailwind CSS 4, Framer Motion |
 | Calcolo | Funzioni pure in `lib/`, nessun database e nessun backend |
 | Test | Vitest |
-| Deploy | Pagina statica |
+| Deploy | Vercel, pagina statica, con Vercel Web Analytics (conteggio anonimo delle visite, senza cookie) |
 
 ```
 lib/parametri-2026.json   costanti fiscali, con fonte e data di verifica
