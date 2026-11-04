@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/*
+ * Design system: lime come superficie di evidenza,
+ * nero verdastro per testo e superfici scure, grigi verdi, radius generosi.
+ * Il lime non ha contrasto su bianco: si usa solo come fondo, con testo
+ * inchiostro sopra. Design volutamente solo chiaro.
+ */
+@theme {
+  --color-lime-050: #fbfcee;
+  --color-lime-100: #f6f9d8;
+  --color-lime-200: #eff4b4;
+  --color-lime-300: #e8ef8a;
+  --color-lime-500: #dfeb57;
+  --color-lime-600: #d9e232;
+  --color-lime-700: #bcc11f;
+  --color-lime-800: #8d8d1b;
+  --color-lime-900: #545212;
+
+  --color-inchiostro: #11150a;
+  --color-grigio: #59615f;
+  --color-grigio-scuro: #3f4340;
+  --color-oliva: #41443b;
+  --color-fondo: #fbfcfb;
+  --color-fondo-2: #f1f4f1;
+  --color-fondo-3: #ecefec;
+  --color-bordo: #e0e6dc;
+  --color-bordo-forte: #cfd6cd;
+  --color-salvia: #9cc35a;
+  --color-salvia-chiaro: #e3eed0;
+  --color-successo: #67c23a;
+  --color-verde-testo: #3b7a1c;
+  --color-ambra-chiaro: #fdf0d4;
+  --color-ambra: #7a5810;
+  --color-rosso: #b42f26;
+}
+
+@theme inline {
+  --font-sans: var(--font-wix);
+  --font-display: var(--font-mona);
+}
+
+body {
+  background: var(--color-fondo);
+  color: var(--color-inchiostro);
+  font-family: var(--font-wix), system-ui, -apple-system, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-mona), system-ui, sans-serif;
+  font-stretch: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-inchiostro);
+  outline-offset: 2px;
+}
+
+/* Slider del budget: traccia sottile, pomello scuro */
+input[type="range"].cursore {
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: linear-gradient(
+    to right,
+    var(--color-inchiostro) 0 var(--riempimento, 0%),
+    var(--color-bordo-forte) var(--riempimento, 0%) 100%
+  );
+  cursor: pointer;
+}
+input[type="range"].cursore::-webkit-slider-thumb {
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 999px;
+  background: var(--color-lime-500);
+  border: 3px solid var(--color-inchiostro);
+}
+input[type="range"].cursore::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--color-lime-500);
+  border: 3px solid var(--color-inchiostro);
+}

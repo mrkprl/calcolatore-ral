@@ -1,0 +1,220 @@
+{
+  "anno_imposta": 2026,
+  "parametri_verificati_il": "2026-11-04",
+  "profilo": "Impiegato a tempo indeterminato, CCNL industria a 13 mensilità, azienda con più di 15 dipendenti, anno intero, residenza fiscale Milano (Lombardia), nessuna agevolazione, unico reddito da lavoro dipendente",
+  "mensilita": {
+    "valore": 13,
+    "fonte": "CCNL metalmeccanico-tipo; semplificazione dichiarata: mensile = netto annuo / 13",
+    "verificato_il": "2026-08-07"
+  },
+  "inps": {
+    "aliquota_dipendente": 0.0919,
+    "fonte": "Aliquota IVS FPLD 33% totale, quota lavoratore 9,19%. L. 335/1995; Circolare INPS n. 14/2026 (aliquote 2026)",
+    "verificato_il": "2026-08-07"
+  },
+  "irpef": {
+    "scaglioni": [
+      {
+        "fino_a": 28000,
+        "aliquota": 0.23
+      },
+      {
+        "fino_a": 50000,
+        "aliquota": 0.33
+      },
+      {
+        "fino_a": null,
+        "aliquota": 0.43
+      }
+    ],
+    "fonte": "Art. 11 c.1 TUIR (DPR 917/1986), come modificato da L. 199/2025 art. 1 c.3 (Legge di Bilancio 2026)",
+    "verificato_il": "2026-08-07"
+  },
+  "detrazione_lavoro_dipendente": {
+    "fascia_1": {
+      "soglia_reddito": 15000,
+      "importo": 1955
+    },
+    "fascia_2": {
+      "soglia_reddito": 28000,
+      "base": 1910,
+      "quota_variabile": 1190,
+      "denominatore": 13000
+    },
+    "fascia_3": {
+      "soglia_reddito": 50000,
+      "base": 1910,
+      "denominatore": 22000
+    },
+    "maggiorazione": {
+      "importo": 65,
+      "reddito_min": 25000,
+      "reddito_max": 35000
+    },
+    "decimali_rapporto": 4,
+    "fonte": "Art. 13 c.1 TUIR (fasce e formule), c. 1.1 inserito dalla L. 234/2021 (maggiorazione 65 euro se il reddito è superiore a 25.000 e non a 35.000), c. 6 (rapporti assunti nelle prime quattro cifre decimali, troncamento secondo la prassi AdE); struttura D.Lgs. 216/2023, confermata da L. 207/2024 e L. 199/2025",
+    "verificato_il": "2026-08-07"
+  },
+  "cuneo_fiscale": {
+    "somma_esente": {
+      "soglia_reddito": 20000,
+      "fasce": [
+        {
+          "fino_a": 8500,
+          "percentuale": 0.071
+        },
+        {
+          "fino_a": 15000,
+          "percentuale": 0.053
+        },
+        {
+          "fino_a": 20000,
+          "percentuale": 0.048
+        }
+      ]
+    },
+    "ulteriore_detrazione": {
+      "importo_pieno": 1000,
+      "soglia_importo_pieno": 32000,
+      "soglia_azzeramento": 40000,
+      "denominatore": 8000
+    },
+    "fonte": "Art. 1 c. 4-9 L. 207/2024 (Legge di Bilancio 2025), reso strutturale dal 2026; spetta ai soli redditi di lavoro dipendente",
+    "verificato_il": "2026-08-07"
+  },
+  "trattamento_integrativo": {
+    "importo": 1200,
+    "soglia_piena": 15000,
+    "soglia_max": 28000,
+    "riduzione_capienza": 75,
+    "nota": "Fino a 15.000 euro spetta per intero se l'imposta lorda supera la detrazione art. 13 c. 1 TUIR diminuita di 75 euro. Tra 15.000 e 28.000 spetta solo se le detrazioni (art. 12, art. 13 c. 1 e altre) superano l'imposta lorda, nel limite della differenza e comunque di 1.200 euro. Non è IRPEF: è una somma erogata in busta paga.",
+    "fonte": "Art. 1 c. 1 DL 3/2020, conv. L. 21/2020, come modificato dall'art. 1 c. 3 L. 234/2021 (fascia 15.000-28.000) e dall'art. 1 c. 3 L. 207/2024 (detrazione art. 13 c. 1 diminuita di 75 euro)",
+    "verificato_il": "2026-11-04"
+  },
+  "addizionale_regionale": {
+    "regione": "Lombardia",
+    "scaglioni": [
+      {
+        "fino_a": 15000,
+        "aliquota": 0.0123
+      },
+      {
+        "fino_a": 28000,
+        "aliquota": 0.0158
+      },
+      {
+        "fino_a": 50000,
+        "aliquota": 0.0172
+      },
+      {
+        "fino_a": null,
+        "aliquota": 0.0173
+      }
+    ],
+    "nota": "Dovuta solo se per lo stesso anno è dovuta l'IRPEF al netto delle detrazioni; in quel caso si applica all'intero imponibile.",
+    "fonte": "Regione Lombardia, art. 72 c.1 l.r. 10/2003, scaglioni adeguati dalla l.r. 5/2022; facoltà prorogata fino al 2028 da L. 199/2025. Riscontro: database addizionali regionali Dipartimento delle Finanze (codice regione 10). Condizione di debenza: art. 50 c. 2 D.Lgs. 446/1997",
+    "verificato_il": "2026-08-08"
+  },
+  "addizionale_comunale": {
+    "comune": "Milano",
+    "aliquota": 0.008,
+    "soglia_esenzione": 23000,
+    "nota": "Soglia di esenzione secca, non franchigia: sopra 23.000 € di imponibile l'aliquota si applica all'INTERO imponibile (effetto scalino). Dovuta solo se per lo stesso anno è dovuta l'IRPEF al netto delle detrazioni.",
+    "fonte": "Comune di Milano, Regolamento addizionale comunale IRPEF (Delib. C.C. 46/2020: soglia 23.000 €; aliquota unica 0,8%). Riscontro: database addizionali comunali Dipartimento delle Finanze. Condizione di debenza: art. 1 c. 4 D.Lgs. 360/1998",
+    "verificato_il": "2026-08-07"
+  },
+  "detrazioni_familiari": {
+    "coniuge": {
+      "fascia_1": {
+        "soglia_reddito": 15000,
+        "base": 800,
+        "riduzione": 110,
+        "denominatore": 15000
+      },
+      "fascia_2": {
+        "soglia_reddito": 40000,
+        "importo": 690
+      },
+      "fascia_3": {
+        "soglia_reddito": 80000,
+        "base": 690,
+        "denominatore": 40000
+      },
+      "maggiorazioni": [
+        {
+          "reddito_oltre": 29000,
+          "fino_a": 29200,
+          "importo": 10
+        },
+        {
+          "reddito_oltre": 29200,
+          "fino_a": 34700,
+          "importo": 20
+        },
+        {
+          "reddito_oltre": 34700,
+          "fino_a": 35000,
+          "importo": 30
+        },
+        {
+          "reddito_oltre": 35000,
+          "fino_a": 35100,
+          "importo": 20
+        },
+        {
+          "reddito_oltre": 35100,
+          "fino_a": 35200,
+          "importo": 10
+        }
+      ],
+      "reddito_max_familiare": 2840.51
+    },
+    "figli": {
+      "importo": 950,
+      "base_reddito": 95000,
+      "incremento_per_figlio": 15000,
+      "eta_min": 21,
+      "eta_max": 29,
+      "reddito_max_familiare_fino_24_anni": 4000,
+      "nota": "Detrazione solo per figli da 21 a 29 anni (o 30 e oltre con disabilità ex L. 104/1992). Sotto i 21 anni spetta l'assegno unico INPS, erogato fuori dalla busta paga. Con più figli che danno diritto alla detrazione, 95.000 aumenta di 15.000 per ogni figlio dopo il primo. Ripartizione 50% tra i genitori, o 100% al genitore con reddito più alto."
+    },
+    "decimali_rapporto": 4,
+    "fonte": "Art. 12 c. 1 lett. a), b), c) e c. 2, 4 TUIR, testo vigente su Normattiva (D.Lgs. 230/2021, L. 207/2024); Circ. AdE 4/E del 16/5/2025",
+    "verificato_il": "2026-11-04"
+  },
+  "costo_azienda": {
+    "contributi_datore": 0.3,
+    "inail": 0.004,
+    "tfr": 0.0691,
+    "nota": "Valori tipici per un impiegato in azienda con più di 15 dipendenti (industria e servizi): INPS datore circa 30% (forchetta 29-31% secondo settore e dimensione), INAIL lavoro d'ufficio circa 0,4%, TFR RAL/13,5 = 7,41% meno 0,50% di contributo aggiuntivo FPLD già compreso nell'IVS = 6,91%. Esclusi fondi contrattuali da CCNL.",
+    "fonte": "Composizione per voci di legge (IVS 23,81%, NASpI 1,61%, CUAF 0,68%, malattia 2,44%, maternità 0,24%, fondo garanzia TFR 0,20%, CIGS 0,60%, FIS); art. 2120 c.c.; art. 3 L. 297/1982; INAIL voce di tariffa 0722 (D.I. 27/2/2019)",
+    "verificato_il": "2026-11-04"
+  },
+  "fringe_benefit": {
+    "soglia": 1000,
+    "soglia_con_figli": 2000,
+    "nota": "Soglia per periodo d'imposta, per ciascun genitore con figli fiscalmente a carico (anche se il figlio percepisce l'assegno unico). Include beni, servizi, utenze domestiche, affitto e interessi del mutuo sull'abitazione principale. Se si supera la soglia anche di un euro, l'intero importo diventa imponibile. Esente da IRPEF e da contributi.",
+    "fonte": "Art. 51 c. 3 TUIR; art. 1 c. 390-391 L. 207/2024 (periodi d'imposta 2025-2027); Circ. AdE 4/E del 16/5/2025, par. 2.7",
+    "verificato_il": "2026-11-04"
+  },
+  "buoni_pasto": {
+    "elettronico_giornaliero": 10,
+    "cartaceo_giornaliero": 4,
+    "giorni_lavorati": 220,
+    "fonte": "Art. 51 c. 2 lett. c) TUIR, come modificato dall'art. 1 c. 14 L. 199/2025 (elettronici da 8 a 10 euro al giorno)",
+    "verificato_il": "2026-11-04"
+  },
+  "welfare": {
+    "nota": "Opere e servizi (lett. f), istruzione dei familiari anche come rimborso (lett. f-bis), assistenza ai familiari anziani (lett. f-ter), trasporto pubblico (lett. d-bis): esenti da IRPEF e contributi senza tetto, se offerti alla generalità o a categorie di dipendenti in base a regolamento o accordo aziendale.",
+    "fonte": "Art. 51 c. 2 lett. f), f-bis), f-ter), d-bis) TUIR, testo vigente su Normattiva",
+    "verificato_il": "2026-11-04"
+  },
+  "premio_risultato": {
+    "aliquota_sostitutiva": 0.01,
+    "limite_lordo": 5000,
+    "soglia_reddito": 80000,
+    "nota": "Imposta sostitutiva sul premio al netto dei contributi del dipendente, che restano dovuti (come quelli del datore). Richiede un contratto aziendale o territoriale con incrementi di produttività misurabili. Soglia di reddito riferita al reddito di lavoro dipendente dell'anno precedente. Convertito in welfare è totalmente esente.",
+    "fonte": "Art. 1 c. 9 L. 199/2025 (1% per i premi erogati nel 2026 e 2027, limite 5.000 euro); art. 1 c. 182-189 L. 208/2015; Ris. AdE 22/E del 9/6/2026",
+    "verificato_il": "2026-11-04"
+  }
+}
